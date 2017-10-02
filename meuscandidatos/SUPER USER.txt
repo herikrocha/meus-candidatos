@@ -1,0 +1,3 @@
+u: admin
+s: Kirehhr7!
+admin@admin.com
