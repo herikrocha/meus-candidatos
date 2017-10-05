@@ -13,6 +13,7 @@ def index(request):
 
     if request.method == 'POST':
         if form.is_valid():
+            
             form.save()
             messages.success(request, "Cadastro efetuado com sucesso")
             
@@ -27,6 +28,21 @@ def htmlMailSend(form):
         subject = "Obrigado por se candidatar"
         from_email = settings.EMAIL_HOST_USER
         to_list = [ form.cleaned_data['email'], from_email]
+        
+        if( form.cleaned_data['html'] is None ):
+            form.cleaned_data['html'] = 0
+        if( form.cleaned_data['css'] is None ):
+            form.cleaned_data['css'] = 0
+        if( form.cleaned_data['javascript'] is None ):
+            form.cleaned_data['javascript'] = 0
+        if( form.cleaned_data['python'] is None ):
+            form.cleaned_data['python'] = 0
+        if( form.cleaned_data['django'] is None ):
+            form.cleaned_data['django'] = 0
+        if( form.cleaned_data['iosDevelopment'] is None ):
+            form.cleaned_data['iosDevelopment'] = 0
+        if( form.cleaned_data['androidDevelopment'] is None ):
+            form.cleaned_data['androidDevelopment'] = 0        
 
         if( form.cleaned_data['html'] >= 7 and form.cleaned_data['css'] >= 7 and form.cleaned_data['javascript'] >= 7 ):
             message = "Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador Front-End entraremos em contato."            

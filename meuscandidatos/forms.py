@@ -9,8 +9,8 @@ class UserSkillsForm(ModelForm):
         model = UserSkills
         fields = ('fullName','email','html','css','javascript','python','django','iosDevelopment','androidDevelopment')
         labels = {            
-            "fullName": "Nome Completo",
-            "email": "E-mail",
+            "fullName": "* Nome Completo",
+            "email": "* E-mail",
             "html": "Html (0 a 10)",
             "css": "Csss (0 a 10)",
             "javascript": "JavaScript (0 a 10)",
