@@ -21,7 +21,6 @@ class UserSkillsTestCase(TestCase):
         self.assertFormError(response, 'form', 'fullName', 'Este campo é obrigatório')
 
 
-
     def test_user_skills_form_success(self):
         data = {'fullName': 'Alberto Silva','email': 'alfrzxzed@gmail.com','html': 5,'css': 5,'javascript': 5,'python': 5,'django': 5,'iosDevelopment': 5,'androidDevelopment': 5}
         client = Client()

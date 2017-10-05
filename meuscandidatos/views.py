@@ -44,6 +44,7 @@ def htmlMailSend(form):
         if( form.cleaned_data['androidDevelopment'] is None ):
             form.cleaned_data['androidDevelopment'] = 0        
 
+
         if( form.cleaned_data['html'] >= 7 and form.cleaned_data['css'] >= 7 and form.cleaned_data['javascript'] >= 7 ):
             message = "Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador Front-End entraremos em contato."            
             res = send_mail(subject, message, from_email, to_list, fail_silently=True)            

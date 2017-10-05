@@ -20,6 +20,7 @@ class UserSkillsForm(ModelForm):
             "androidDevelopment": "Desenvolvimento em Android (0 a 10)"
         }
         
+    
         error_messages = {
             NON_FIELD_ERRORS: {
                 'unique_together': "Já existe um Usuário %(User) com o %(email)s informado.",
