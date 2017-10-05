@@ -1,0 +1,259 @@
+form input {
+    border: 1px solid #b4c2d7;
+    border-radius: 3px;
+    clear: both;
+    letter-spacing: 0.75px;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+/*GERAL*/
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.botao {
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #0192F6;
+    font-size: .9em;
+    border-radius: 3px;
+}
+
+.btnSubmit {
+
+    border: 1px solid #b4c2d7;
+    width: 100%;
+    
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 10px 200px;
+    background-color: #0192F6;
+    font-size: .9em;
+    border-radius: 5px;
+}
+
+
+/*ICONE*/
+
+.ico-meus-candidatos > img {
+
+       max-height: 100%;
+       height: 100%;
+       width: auto;
+       margin: 0 auto;    
+       -o-object-fit: contain;
+       object-fit: contain; 
+    
+}
+
+.logo {
+    
+    max-width: 100%;
+    max-height: 100%;
+    }
+
+
+/*NAVEGAÇÃO*/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4d4d4d;
+}
+
+nav > a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: inherit, serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+    width: 100%;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+/*CABEÇALHO*/
+
+header {
+    background-image: url('../img/candidate-se.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+}
+
+header p {
+    margin-bottom: 2em;
+}
+
+/*SOBRE*/
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: #0192F6;
+    color: #f1f1f1;
+}
+
+#sobre p {
+    margin-bottom: 2.5em;
+    max-width: 1000px;
+}
+
+#sobre .botao {
+    background-color: #f1f1f1;
+    color: #4d4d4d;
+}
+
+/*CANDIDATE-SE*/
+
+#cadastro {
+    padding: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cadastro div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.success{
+    background: #0192F6;
+    text-align: center; 
+    color: white;
+
+}
+
+/*CONTATO*/
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: #0192F6;
+    color: white;
+
+}
+
+/*FOOTER*/
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+}
+
+
+@media screen and (min-width: 768px) {
+    /*NAVEGAÇÃO*/
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        width: 40%;
+    }
+    
+    /*CABEÇALHO*/
+    
+    header {
+        height: 600px;
+        height: 60vh;
+        justify-content: center;
+    }
+    
+    /*SOBRE*/
+    
+    #sobre {
+        height: 250px;
+        height: 30vh;
+        justify-content: center;
+        min-height: 250px;
+    }
+    
+    /*CANDIDATE-SE*/
+    
+    #cadastro {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    #cadastro h2 {
+        text-align: center;
+        width: 100%;
+    }
+    
+    #cadastro div {
+        flex-grow: 1;
+        flex-basis: 150px;
+        padding: 0 10px;
+    }
+        
+/*CONTATO*/     
+
+    #contato {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 100%;
+        margin: 0 auto;
+        height: 250px;        
+    }
+    
+    #contato h2,
+    #contato p {
+        width: 100%;        
+    }
+    
+}

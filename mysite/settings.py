@@ -25,7 +25,7 @@ SECRET_KEY = 'pja8x#l(f&r_4m#=a8^4+od4(e8$kuo%(1a8$vqydpv=l0en%z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'herikrocha.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -37,7 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meuscandidatos',
+    'bootstrapform',
+    'bootstrap3',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'herikrocha@gmail.com'
+EMAIL_HOST_PASSWORD = 'herikhr'
+EMAIL_USE_TLS = True
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

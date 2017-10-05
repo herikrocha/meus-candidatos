@@ -1,19 +1,34 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import EmailValidator
+
+class User(models.Model):    
+    fullName = models.CharField(max_length=30)
+    email = models.EmailField(unique=True, validators=[EmailValidator(message="E-mail inválido")])
+    
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.fullName
 
 
-class User(models.Model):
-    firstName = models.CharField(max_length=30)
-    lastName = models.CharField(max_length=30)
+class UserSkills(User): 
 
+    html = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    css = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    javascript = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    python = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    django = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    iosDevelopment = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
+    androidDevelopment = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],error_messages={'max_value': ('O valor deve estar entre 0 e 10')})
 
+    def publish(self):
+        self.save()
 
+    def __str__(self):
+        return self.fullName
 
-class Skills(models.Model):            
-    html = models.IntegerField()
-    css = models.IntegerField()
-    javascript = models.IntegerField()
-    python = models.IntegerField()
-    django = models.IntegerField()
-    iosDevelopment = models.IntegerField()
-    androidDevelopment = models.IntegerField()
+    def getEmail(self):
+        self.email

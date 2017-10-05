@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="../img/meus-candidatos.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/meus-candidatos.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <title>Meus Candidatos</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/meuscandidatos.css">
+</head>
+  
+<body>    
+
+
+    
+    <nav>   
+        <a href="#">Meus Candidatos</a>
+        <ul>
+            <li><a href="#sobre">SOBRE</a></li>
+            <li><a href="#cadastro">CANDIDATE-SE</a></li>
+            <li><a href="#contato">CONTATO</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>MEUS CANDIDATOS</h1>
+        <p>Conheça a Meus Candidatos, a mais nova plataforma de recrutamento da Meus Pedidos </p>
+        <a href="#sobre" class="botao">VER MAIS</a>
+    </header>
+    
+    <section id="sobre">
+        <h2>SOBRE</h2>
+        <p>Nós da Meus Pedidos estamos crescendo muito, e o nosso quadro de funcionários também! Para facilitar este árduo processo,
+            criamos a plataforma <strong>Meus Candidatos</strong>!
+            Aqui você poderá se candidatar às nossas vagas de programador, informando suas habilidades para que possamos avaliar qual
+            a vaga em que você melhor se encaixa.</p>
+            <a href="#contato" class="botao">ENTRE EM CONTATO</a>
+        </section>
+        
+        <section id="cadastro">
+            
+            {% if messages %}
+            <div>
+                {% for message in messages %}
+                <p{% if message.tags == "success" %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}    
+            
+            <h2>CANDITATE-SE AGORA!</h2>
+        <div>
+            <h3>Preencha seus dados e habilidades:</h3>            
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}            
+                <button type="submit" href="#cadastro" class="btnSubmit">Confirmar Cadastro</button>
+            </form>
+        </div>
+
+
+    </section>
+
+    <section id="contato">
+        <h2>ENTRE EM CONTATO CONOSCO</h2>
+        <div>
+            <p>Telefone: <a href="tel:47997678731">(47) 99767 8731</a></p>
+            <p>E-mail: <a href="mailto:herikrocha@gmail.com">herikrocha@gmail.com</a></p>
+            <p>Avenida Getúlio Vargas, 1165 - Bucarein | Joinville - SC</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Herik Rocha.</p>
+    </footer>
+    
+</body>
+</html>
